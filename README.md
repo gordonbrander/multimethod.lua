@@ -8,20 +8,22 @@ Inspired by Clojure's approach (http://clojure.org/multimethods), a multimethod 
 
 How to use it:
 
-    local Multi = require('multimethod')
+```lua
+local Multi = require('multimethod')
 
-    -- This simple example will dispatch on first argument by type.
-    local foo = Multi.new(Multi.isa)
+-- This simple example will dispatch on first argument by type.
+local foo = Multi.new(Multi.isa)
 
-    -- Creating an implementation for a multimethod is easy... just assign
-    -- a function to desired dispatch key.
+-- Creating an implementation for a multimethod is easy... just assign
+-- a function to desired dispatch key.
 
-    function foo.string(x)
-      print("string!")
-    end
+function foo.string(x)
+  print("string!")
+end
 
-    function foo.number(x)
-      print("number!")
-    end
+function foo.number(x)
+  print("number!")
+end
 
-    foo('what is this?')
+foo('what is this?')
+```
